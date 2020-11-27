@@ -9,11 +9,11 @@ function pathResolve(dir: string) {
 const viteConfig: UserConfig = {
   port: 3555,
   hostname: 'localhost',
-  open: false,
+  open: true,
   outDir: 'dist',
 
   alias: {
-    '/@/': pathResolve('./src'),
+    '@': pathResolve('./src'),
   },
 };
 
