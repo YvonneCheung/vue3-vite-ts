@@ -13,7 +13,7 @@ const viteConfig: UserConfig = {
   outDir: 'dist',
 
   alias: {
-    '@': pathResolve('./src'),
+    '/@/': pathResolve('./src'),
   },
 };
 

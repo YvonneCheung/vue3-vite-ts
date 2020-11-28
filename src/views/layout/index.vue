@@ -1,9 +1,7 @@
 <template>
-  <router-view></router-view>
+  <el-header>2333</el-header>
 </template>
-
 <script lang="ts">
-  import HelloWorld from './components/HelloWorld.vue';
   export default {
     name: 'App',
     setup() {},

@@ -1,4 +1,5 @@
 <template>
+  <input type="text" v-model="msg" @change="changeValue()" />
   <h1>{{ msg }}</h1>
   <button @click="sayHello">count is: {{ count }}</button>
   <h1>ref && reactive</h1>
@@ -31,6 +32,7 @@
     watchEffect,
     computed,
     defineComponent,
+    getCurrentInstance,
   } from 'vue';
   export default {
     name: 'HelloWorld',
@@ -136,6 +138,10 @@
       onErrorCaptured(() => {
         console.log('onErrorCaptured');
       });
+      const { ctx } = getCurrentInstance();
+      function changeValue(e: any) {
+        ctx.$emit('update:msg', e);
+      }
       return {
         count,
         sayHello,
